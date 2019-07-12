@@ -23,10 +23,26 @@ Sortie attendue:
   "Very useful tutorial, thank you so much!",
   "Which one is better, React or Angular?",
 ]
-
 */
 
 function filterOffensiveComments(comments, bannedWords) {
+	
+		
+	const filtreTexte = comments.filter(function(comment){
+		var isAllow=true;
+		for (i=0;i<bannedWords.length;i++) {
+			var  bannedW=bannedWords[i].toLowerCase();
+			var lowComment=comment.toLowerCase();
+			if (lowComment.includes(bannedW)) {
+				isAllow=false;
+			}
+		}
+		if (isAllow==true) {
+			return comment;
+		}	
+	});
+		
+	return filtreTexte;
 }
 
 // Ne pas modifier l'export

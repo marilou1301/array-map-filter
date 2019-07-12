@@ -24,6 +24,10 @@ Sortie attendue:
  */
 
 function keepStarks(names) {
+	
+	var starkFamily=new Array();
+	starkFamily=names.filter(function(chaine){ return chaine.endsWith("Stark");});
+	return starkFamily;
 }
 
 // Ne pas modifier l'export
